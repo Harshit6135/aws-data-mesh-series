@@ -1,0 +1,74 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lakeformation:GetDataAccess"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "athena:StartQueryExecution",
+                "athena:GetQueryResults",
+                "athena:GetWorkGroup",
+                "athena:ListWorkGroups",
+                "athena:ListDataCatalogs",
+                "athena:ListDatabases",
+                "athena:ListTableMetadata",
+                "athena:GetQueryExecution",
+                "athena:StopQueryExecution"
+            ],
+            "Resource": [
+                "arn:aws:athena:<region>:<account_number>:workgroup/data-mesh-consumer"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:PutObject",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketLocation",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:ListBucketMultipartUploads",
+                "s3:ListMultipartUploadParts",
+                "s3:AbortMultipartUpload",
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::REPLACE_ME_WITH_QUERY_RESULTS_BUCKET",
+                "arn:aws:s3:::REPLACE_ME_WITH_QUERY_RESULTS_BUCKET/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kms:Decrypt",
+                "kms:GenerateDataKey",
+                "kms:Encrypt"
+            ],
+            "Resource": "REPLACE_WITH_KMS_KEY_ARN_CREATED_IN_PART_1"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "glue:GetDatabase",
+                "glue:GetTable",
+                "glue:GetTables",
+                "glue:GetPartitions",
+                "glue:GetDatabases",
+                "glue:GetTableVersion",
+                "glue:GetTableVersions",
+                "glue:BatchGetPartition"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
