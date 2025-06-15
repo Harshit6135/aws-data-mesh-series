@@ -6,7 +6,7 @@
       "Action": [
         "s3:ListBucket"
       ],
-      "Resource": "arn:aws:s3:::aws-data-mesh-<account_number>-<region>"
+      "Resource": "arn:aws:s3:::REPLACE_ME_WITH_DATALAKE_BUCKET"
     },
     {
       "Effect": "Allow",
@@ -14,7 +14,7 @@
         "s3:GetObject",
         "s3:PutObject"
       ],
-      "Resource": "arn:aws:s3:::aws-data-mesh-<account_number>-<region>/*"
+      "Resource": "arn:aws:s3:::REPLACE_ME_WITH_DATALAKE_BUCKET/*"
     },
     {
       "Effect": "Allow",
@@ -29,8 +29,8 @@
       ],
       "Resource": [
         "arn:aws:glue:<region>:<account_number>:catalog",
-        "arn:aws:glue:<region>:<account_number>:database/<your-database-name>",
-        "arn:aws:glue:<region>:<account_number>:table/<your-database-name>/*"
+        "arn:aws:glue:<region>:<account_number>:database/*",
+        "arn:aws:glue:<region>:<account_number>:table/*"
       ]
     },
     {
@@ -41,7 +41,7 @@
         "kms:GenerateDataKey",
         "kms:DescribeKey"
       ],
-      "Resource": "<your-kms-key-arn>"
+      "Resource": "REPLACE_WITH_KMS_KEY_ARN_CREATED_IN_STEP_1"
     }
   ]
 }
