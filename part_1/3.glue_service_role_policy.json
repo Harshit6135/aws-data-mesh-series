@@ -1,0 +1,22 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "LFAccess",
+            "Effect": "Allow",
+            "Action": "lakeformation:GetDataAccess",
+            "Resource": "*"
+        },
+        {
+            "Sid": "KMSAccess",
+            "Effect": "Allow",
+            "Action": [
+                "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:GenerateDataKey",
+                "kms:DescribeKey"
+            ],
+            "Resource": "REPLACE_WITH_KMS_KEY_ARN_CREATED_IN_STEP_1"
+        }
+    ]
+}
