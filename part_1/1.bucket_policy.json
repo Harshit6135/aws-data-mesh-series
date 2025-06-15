@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyUnsecuredTransport",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::aws-data-mesh-<account_number>-<region>",
+        "arn:aws:s3:::aws-data-mesh-<account_number>-<region>/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false"
+        }
+      }
+    },
+    {
+      "Sid": "DenyPresignedUrls",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::aws-data-mesh-<account_number>-<region>/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:authType": "REST-QUERY-STRING"
+        }
+      }
+    }
+  ]
+}
