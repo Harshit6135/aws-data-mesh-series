@@ -19,24 +19,6 @@
       "Resource": "arn:aws:s3:::REPLACE_ME_WITH_DATALAKE_BUCKET/*"
     },
     {
-      "Sid": "GlueAccess",
-      "Effect": "Allow",
-      "Action": [
-        "glue:CreateTable",
-        "glue:GetDatabase",
-        "glue:GetTable",
-        "glue:UpdateTable",
-        "glue:BatchCreatePartition",
-        "glue:BatchGetPartition",
-        "glue:BatchDeletePartition"
-      ],
-      "Resource": [
-        "arn:aws:glue:<region>:<account_number>:catalog",
-        "arn:aws:glue:<region>:<account_number>:database/*",
-        "arn:aws:glue:<region>:<account_number>:table/*"
-      ]
-    },
-    {
       "Sid": "KMSAccess",
       "Effect": "Allow",
       "Action": [
