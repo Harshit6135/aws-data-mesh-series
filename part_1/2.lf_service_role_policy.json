@@ -2,6 +2,7 @@
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Sid": "S3ListObjectAccess",
       "Effect": "Allow",
       "Action": [
         "s3:ListBucket"
@@ -9,6 +10,7 @@
       "Resource": "arn:aws:s3:::REPLACE_ME_WITH_DATALAKE_BUCKET"
     },
     {
+      "Sid": "S3ReadWriteAccess",
       "Effect": "Allow",
       "Action": [
         "s3:GetObject",
@@ -17,6 +19,7 @@
       "Resource": "arn:aws:s3:::REPLACE_ME_WITH_DATALAKE_BUCKET/*"
     },
     {
+      "Sid": "GlueAccess",
       "Effect": "Allow",
       "Action": [
         "glue:CreateTable",
@@ -34,6 +37,7 @@
       ]
     },
     {
+      "Sid": "KMSAccess",
       "Effect": "Allow",
       "Action": [
         "kms:Encrypt",

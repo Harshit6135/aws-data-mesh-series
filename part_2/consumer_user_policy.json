@@ -2,6 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "LFAccess",
             "Effect": "Allow",
             "Action": [
                 "lakeformation:GetDataAccess"
@@ -11,6 +12,7 @@
             ]
         },
         {
+            "Sid": "AthenaListAccess",
             "Effect": "Allow",
             "Action": [
                 "athena:ListWorkGroups"
@@ -18,6 +20,7 @@
             "Resource": "*"
         },
         {
+            "Sid": "AthenaExecuteAccess",
             "Effect": "Allow",
             "Action": [
                 "athena:StartQueryExecution",
@@ -35,6 +38,7 @@
             ]
         },
         {
+            "Sid": "S3ReadWriteAccess",
             "Effect": "Allow",
             "Action": [
                 "s3:GetObject",
@@ -55,6 +59,7 @@
             ]
         },
         {
+            "Sid": "KMSAccess",
             "Effect": "Allow",
             "Action": [
                 "kms:Decrypt",
@@ -64,6 +69,7 @@
             "Resource": "REPLACE_WITH_KMS_KEY_ARN_CREATED_IN_PART_1"
         },
         {
+            "Sid": "GlueAccess",
             "Effect": "Allow",
             "Action": [
                 "glue:GetDatabase",

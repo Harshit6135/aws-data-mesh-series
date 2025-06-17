@@ -1,0 +1,52 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "LFAccess",
+            "Effect": "Allow",
+            "Action": "lakeformation:GetDataAccess",
+            "Resource": "*"
+        },
+        {
+            "Sid": "KMSAccess",
+            "Effect": "Allow",
+            "Action": [
+                "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:GenerateDataKey",
+                "kms:DescribeKey"
+            ],
+            "Resource": "REPLACE_WITH_KMS_KEY_ARN_CREATED_IN_STEP_1"
+        },
+        {
+            "Sid": "GlueAccess",
+            "Effect": "Allow",
+            "Action": [
+                "glue:CreateTable",
+                "glue:GetDatabase",
+                "glue:GetTable",
+                "glue:UpdateTable",
+                "glue:BatchCreatePartition",
+                "glue:BatchGetPartition",
+                "glue:BatchDeletePartition"
+            ],
+            "Resource": [
+                "arn:aws:glue:<region>:<account_number>:catalog",
+                "arn:aws:glue:<region>:<account_number>:database/*",
+                "arn:aws:glue:<region>:<account_number>:table/*"
+            ]
+        },
+        {
+            "Sid": "CloudWatchAccess",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": [
+                "arn:aws:logs:*:*:*:/aws-glue/*"
+            ]
+        }
+    ]
+}
