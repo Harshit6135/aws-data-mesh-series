@@ -1,0 +1,63 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "OwnerAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<account_id>:root"
+      },
+      "Action": "SQS:*",
+      "Resource": "arn:aws:sqs:<region>:<account_id>:aws-data-mesh-crawler-queue"
+    },
+    {
+      "Sid": "S3Access",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "sqs:SendMessage",
+      "Resource": "arn:aws:sqs:<region>:<account_id>:aws-data-mesh-crawler-queue"
+    },
+    {
+      "Sid": "DeleteAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<account_id>:role/service-role/AWSGlueServiceRole-datamesh"
+      },
+      "Action": [
+        "sqs:DeleteMessage",
+        "sqs:PurgeQueue"
+      ],
+      "Resource": "arn:aws:sqs:<region>:<account_id>:aws-data-mesh-crawler-queue"
+    },
+    {
+      "Sid": "GetAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<account_id>:role/service-role/AWSGlueServiceRole-datamesh"
+      },
+      "Action": [
+        "sqs:GetQueueUrl",
+        "sqs:ListDeadLetterSourceQueues"
+      ],
+      "Resource": "arn:aws:sqs:<region>:<account_id>:aws-data-mesh-crawler-queue"
+    },
+    {
+      "Sid": "WriteAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<account_id>:role/service-role/AWSGlueServiceRole-datamesh"
+      },
+      "Action": [
+        "sqs:ChangeMessageVisibility",
+        "sqs:ReceiveMessage",
+        "sqs:GetQueueAttributes",
+        "sqs:ListQueueTags",
+        "sqs:SetQueueAttributes",
+        "sqs:SendMessage"
+      ],
+      "Resource": "arn:aws:sqs:<region>:<account_id>:aws-data-mesh-crawler-queue"
+    }
+  ]
+}
