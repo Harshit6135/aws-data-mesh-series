@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+          "Sid": "ListAccess",
+          "Effect": "Allow",
+          "Action": [
+              "sqs:ListQueues"
+          ],
+          "Resource": "*"
+      },
+      {
+          "Sid": "SQSAccess",
+          "Effect": "Allow",
+          "Action": [
+              "sqs:DeleteMessage",
+              "sqs:GetQueueUrl",
+              "sqs:ListDeadLetterSourceQueues",
+              "sqs:ChangeMessageVisibility",
+              "sqs:PurgeQueue",
+              "sqs:ReceiveMessage",
+              "sqs:GetQueueAttributes",
+              "sqs:ListQueueTags",
+              "sqs:SetQueueAttributes",
+              "sqs:SendMessage"
+          ],
+          "Resource": [
+              "arn:aws:sqs:us-east-1:781461006318:aws-data-mesh-crawler-queue",
+              "arn:aws:sqs:us-east-1:781461006318:aws-data-mesh-crawler-queue-dlq"
+          ]
+      }
+  ]
+}
