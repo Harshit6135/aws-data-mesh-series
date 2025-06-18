@@ -25,8 +25,8 @@
               "sqs:SendMessage"
           ],
           "Resource": [
-              "arn:aws:sqs:us-east-1:781461006318:aws-data-mesh-crawler-queue",
-              "arn:aws:sqs:us-east-1:781461006318:aws-data-mesh-crawler-queue-dlq"
+              "arn:aws:sqs:<region>:<account_id>:aws-data-mesh-crawler-queue",
+              "arn:aws:sqs:<region>:<account_id>:aws-data-mesh-crawler-queue-dlq"
           ]
       }
   ]
