@@ -1,5 +1,5 @@
 {
-    "Sid": "Allow S3 Service",
+    "Sid": "Allow CloudTrail Service",
     "Effect": "Allow",
     "Principal": {
         "Service": "cloudtrail.amazonaws.com"
