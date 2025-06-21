@@ -2,7 +2,7 @@
     "Sid": "Allow S3 Service",
     "Effect": "Allow",
     "Principal": {
-        "Service": "s3.amazonaws.com"
+        "Service": "cloudtrail.amazonaws.com"
     },
     "Action": [
         "kms:Encrypt",
