@@ -28,6 +28,26 @@
               "arn:aws:sqs:<region>:<account_id>:aws-data-mesh-crawler-queue",
               "arn:aws:sqs:<region>:<account_id>:aws-data-mesh-crawler-queue-dlq"
           ]
+      },
+      {
+          "Sid": "GluePartitionAccess",
+          "Effect": "Allow",
+          "Action": [
+            	"glue:GetPartition",
+				"glue:CreatePartitionIndex",
+				"glue:DeletePartitionIndex",
+				"glue:BatchUpdatePartition",
+				"glue:GetPartitions",
+				"glue:CreatePartition",
+				"glue:DeletePartition",
+				"glue:GetPartitionIndexes",
+				"glue:UpdatePartition"
+          ],
+          "Resource": [
+                "arn:aws:glue:<region>:<account_number>:catalog",
+                "arn:aws:glue:<region>:<account_number>:database/*",
+                "arn:aws:glue:<region>:<account_number>:table/*"
+          ]
       }
   ]
 }
