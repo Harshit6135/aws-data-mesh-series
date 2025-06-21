@@ -1,0 +1,15 @@
+{
+    "Sid": "Allow S3 Service",
+    "Effect": "Allow",
+    "Principal": {
+        "Service": "s3.amazonaws.com"
+    },
+    "Action": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:DescribeKey"
+    ],
+    "Resource": "*"
+}
