@@ -33,15 +33,15 @@
           "Sid": "GluePartitionAccess",
           "Effect": "Allow",
           "Action": [
-            	"glue:GetPartition",
-				"glue:CreatePartitionIndex",
-				"glue:DeletePartitionIndex",
-				"glue:BatchUpdatePartition",
-				"glue:GetPartitions",
-				"glue:CreatePartition",
-				"glue:DeletePartition",
-				"glue:GetPartitionIndexes",
-				"glue:UpdatePartition"
+                "glue:GetPartition",
+                "glue:CreatePartitionIndex",
+                "glue:DeletePartitionIndex",
+                "glue:BatchUpdatePartition",
+                "glue:GetPartitions",
+                "glue:CreatePartition",
+                "glue:DeletePartition",
+                "glue:GetPartitionIndexes",
+                "glue:UpdatePartition"
           ],
           "Resource": [
                 "arn:aws:glue:<region>:<account_number>:catalog",
