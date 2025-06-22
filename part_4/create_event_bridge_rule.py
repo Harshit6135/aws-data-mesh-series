@@ -40,7 +40,7 @@ events_client.put_targets(
     Targets=[
         {
             'Id': 'DataMeshAccessLogGroup',
-            'Arn': "arn:aws:logs:<region>:<account_id>:log-group:/aws/events/datamesh_access_log_group"
+            'Arn': "arn:aws:logs:us-east-1:781461006318:log-group:/aws/events/datamesh_access_log_group"
         }
     ]
 )
@@ -65,7 +65,7 @@ logs_client.put_resource_policy(
                     "logs:CreateLogStream",
                     "logs:PutLogEvents"
                 ],
-                "Resource": f"arn:aws:logs:<region>:<account_id>:log-group:/aws/events/datamesh_access_log_group:*"
+                "Resource": f"arn:aws:logs:us-east-1:781461006318:log-group:/aws/events/datamesh_access_log_group:*"
             }
         ]
     })
