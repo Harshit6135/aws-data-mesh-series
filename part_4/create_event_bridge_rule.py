@@ -48,7 +48,7 @@ events_client.put_targets(
 
 # Add permissions to allow EventBridge to write to the CloudWatch Logs group
 logs_client.put_resource_policy(
-    policyName=policy_name,
+    policyName="AllowEventBridgeWrite",
     policyDocument=json.dumps({
         "Version": "2012-10-17",
         "Statement": [
